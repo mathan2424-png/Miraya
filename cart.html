@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Bag — MIRAYA Timeless Elegance</title>
+  <meta name="description"
+    content="View your shopping bag and proceed to checkout at MIRAYA. Handcrafted heirloom silk sarees with free express insured shipping across India.">
+
+  <!-- Google Fonts System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/new logo.png">
+  <link rel="apple-touch-icon" href="images/new logo.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Dedicated Cart Page Custom Styling */
+    .cart-page-section {
+      padding: 130px 0 100px;
+      background: var(--ivory);
+      min-height: 80vh;
+    }
+
+    .cart-page-title {
+      font-family: var(--font-hero);
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .cart-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Left Cart Items Container */
+    .cart-items-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(176, 141, 87, 0.2);
+      box-shadow: var(--shadow-sm);
+      padding: 30px;
+    }
+
+    .cart-table-header {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 0.8fr;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--beige-deep);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .cart-item-row {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 0.8fr;
+      gap: 16px;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--beige-deep);
+      transition: all 0.3s var(--ease);
+    }
+
+    .cart-item-row:last-child {
+      border-bottom: none;
+    }
+
+    .cart-prod-info {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .cart-prod-img {
+      width: 80px;
+      height: 96px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid var(--beige-deep);
+    }
+
+    .cart-prod-details h4 {
+      font-family: var(--font-section);
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .cart-prod-details span {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .cart-price {
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--wine);
+      font-variant-numeric: lining-nums proportional-nums;
+      -webkit-font-feature-settings: "lnum" 1, "pnum" 1;
+      font-feature-settings: "lnum" 1, "pnum" 1;
+    }
+
+    .cart-qty-picker {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--beige-deep);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .cart-qty-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--ivory);
+      transition: background 0.2s var(--ease);
+    }
+
+    .cart-qty-btn:hover {
+      background: var(--gold-light);
+      color: #fff;
+    }
+
+    .cart-qty-val {
+      width: 36px;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      font-variant-numeric: lining-nums proportional-nums;
+    }
+
+    .cart-remove-btn {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #e74c3c;
+      transition: color 0.3s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cart-remove-btn:hover {
+      color: #c0392b;
+      text-decoration: underline;
+    }
+
+    /* Right Order Summary Card */
+    .summary-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(176, 141, 87, 0.25);
+      box-shadow: var(--shadow-md);
+      padding: 36px 30px;
+      position: sticky;
+      top: 110px;
+    }
+
+    .summary-card h3 {
+      font-family: var(--font-hero);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+
+    .summary-row span:last-child {
+      font-weight: 600;
+      color: var(--ink);
+      font-variant-numeric: lining-nums proportional-nums;
+    }
+
+    .summary-row.free-shipping span:last-child {
+      color: #27ae60;
+    }
+
+    .summary-divider {
+      height: 1px;
+      background: var(--beige-deep);
+      margin: 20px 0;
+    }
+
+    .summary-row.total-row {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .summary-row.total-row span:last-child {
+      font-family: var(--font-body);
+      font-size: 26px;
+      color: var(--wine);
+      font-weight: 700;
+      font-variant-numeric: lining-nums proportional-nums;
+    }
+
+    .btn-checkout {
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--wine);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s var(--ease);
+    }
+
+    .btn-checkout:hover {
+      background: var(--wine-deep);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .secure-note {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--ink-soft);
+      text-align: center;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .empty-cart-msg {
+      text-align: center;
+      padding: 60px 20px;
+      display: none;
+    }
+
+    .empty-cart-msg h4 {
+      font-family: var(--font-hero);
+      font-size: 28px;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .empty-cart-msg p {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .cart-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .cart-table-header {
+        display: none;
+      }
+
+      .cart-item-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        text-align: center;
+      }
+
+      .cart-prod-info {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar navbar-solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html#home" class="logo-link"><img src="images/new logo.png" alt="MIRAYA — Timeless Elegance"
+          class="nav-logo"></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="sarees.html">Sarees</a>
+        <a href="kids.html">Kids</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        
+        <a href="wishlist.html" class="icon-btn wishlist-btn-nav" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path
+              d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+          </svg>
+          <span class="wishlist-count">2</span>
+        </a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count">2</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CART MAIN SECTION ============ -->
+  <section class="cart-page-section">
+    <div class="container">
+
+      <h1 class="cart-page-title reveal">SHOPPING BAG</h1>
+
+      <div class="cart-grid reveal">
+
+        <!-- LEFT: CART ITEMS LIST -->
+        <div class="cart-items-card" id="cartContainer">
+
+          <div class="cart-table-header">
+            <span>PRODUCT</span>
+            <span>PRICE</span>
+            <span>QUANTITY</span>
+            <span>ACTION</span>
+          </div>
+
+          <!-- Item 1 -->
+          <div class="cart-item-row" id="cart-item-1">
+            <div class="cart-prod-info">
+              <img src="images/pure gold.png" alt="Pure Zari Kanchipuram Silk" class="cart-prod-img">
+              <div class="cart-prod-details">
+                <h4>Pure Zari Kanchipuram Silk</h4>
+                <span>Color: Crimson Gold Zari</span>
+              </div>
+            </div>
+            <div class="cart-price" id="item1-price">₹38,500</div>
+            <div>
+              <div class="cart-qty-picker">
+                <button class="cart-qty-btn" onclick="updateCartQty('item1', -1, 38500)">-</button>
+                <span class="cart-qty-val" id="item1-qty">1</span>
+                <button class="cart-qty-btn" onclick="updateCartQty('item1', 1, 38500)">+</button>
+              </div>
+            </div>
+            <div>
+              <button class="cart-remove-btn" onclick="removeItem('cart-item-1', 38500, 'item1-qty')">REMOVE</button>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="cart-item-row" id="cart-item-2">
+            <div class="cart-prod-info">
+              <img src="images/semi transparen.png" alt="Festive Sheer Chiffon Saree" class="cart-prod-img">
+              <div class="cart-prod-details">
+                <h4>Festive Sheer Chiffon Saree</h4>
+                <span>Color: Sunset Persimmon</span>
+              </div>
+            </div>
+            <div class="cart-price" id="item2-price">₹18,125</div>
+            <div>
+              <div class="cart-qty-picker">
+                <button class="cart-qty-btn" onclick="updateCartQty('item2', -1, 18125)">-</button>
+                <span class="cart-qty-val" id="item2-qty">1</span>
+                <button class="cart-qty-btn" onclick="updateCartQty('item2', 1, 18125)">+</button>
+              </div>
+            </div>
+            <div>
+              <button class="cart-remove-btn" onclick="removeItem('cart-item-2', 18125, 'item2-qty')">REMOVE</button>
+            </div>
+          </div>
+
+          <!-- Empty State Message -->
+          <div class="empty-cart-msg" id="emptyCartMsg">
+            <h4>Your Shopping Bag is Empty</h4>
+            <p>Discover our heirloom handloom silk collection and find your perfect piece.</p>
+            <a href="sarees.html" class="btn btn-gold">Explore Sarees Collection</a>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: ORDER SUMMARY CARD -->
+        <div class="summary-card">
+          <h3>ORDER SUMMARY</h3>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotalDisplay">₹56,625</span>
+          </div>
+          <div class="summary-row free-shipping">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-row total-row">
+            <span>TOTAL</span>
+            <span id="totalDisplay">₹56,625</span>
+          </div>
+
+          <a href="checkout.html" class="btn-checkout"
+            style="display: block; text-align: center; text-decoration: none;">CHECKOUT</a>
+
+          <div class="secure-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <span>Secure Checkout — 256-Bit SSL Encrypted</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html#home" class="footer-logo-link"><img src="images/logo_transparent.png" alt="MIRAYA — Timeless Elegance"
+              class="footer-logo"></a>
+          <p>A luxury boutique for handcrafted sarees, kids ethnic wear, and festive fashion — designed with heritage handloom artistry in Jaipur.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 17c1-3 1.5-6 1.5-8a2 2 0 1 1 4 0c0 1.5-1 3-2 3.5" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <path d="M15 8h-2a2 2 0 0 0-2 2v10" />
+                <path d="M9 13h6" />
+                <circle cx="12" cy="12" r="9" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="sarees.html">Kanchipuram Sarees</a></li>
+            <li><a href="sarees.html">Banarasi Silk</a></li>
+            <li><a href="kids.html">Kids Ethnic Collection</a></li>
+            <li><a href="sarees.html">Festive Couture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="about.html#artisans">Our Artisans</a></li>
+            <li><a href="contact.html">Careers &amp; Culture</a></li>
+            <li><a href="contact.html">Press &amp; Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="contact.html">Concierge &amp; Help</a></li>
+            <li><a href="wishlist.html">Wishlist Heirlooms</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Policies</h5>
+          <ul>
+            <li><a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="policy-link" data-policy="returns">Return &amp; Refund</a></li>
+            <li><a href="#" class="policy-link" data-policy="shipping">Shipping Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="cancellation">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MIRAYA Atelier. All rights reserved.</span>
+        <div class="footer-policy-bottom">
+          <a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a> • 
+          <a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a> • 
+          <a href="#" class="policy-link" data-policy="returns">Return Policy</a>
+        </div>
+        <span>Crafted with care in Jaipur, India.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Real-Time Cart Calculation Script -->
+  <script>
+    const itemPrices = { item1: 38500, item2: 18125 };
+    const itemQtys = { item1: 1, item2: 1 };
+
+    function formatINR(amount) {
+      return '₹' + amount.toLocaleString('en-IN');
+    }
+
+    function updateCartQty(itemKey, change, unitPrice) {
+      itemQtys[itemKey] = Math.max(1, itemQtys[itemKey] + change);
+      document.getElementById(itemKey + '-qty').textContent = itemQtys[itemKey];
+      document.getElementById(itemKey + '-price').textContent = formatINR(itemQtys[itemKey] * unitPrice);
+      recalculateCart();
+    }
+
+    function removeItem(rowId, unitPrice, qtyId) {
+      const rowElem = document.getElementById(rowId);
+      if (rowElem) {
+        rowElem.style.opacity = '0';
+        rowElem.style.transform = 'translateX(20px)';
+        setTimeout(() => {
+          rowElem.remove();
+          if (rowId === 'cart-item-1') itemQtys.item1 = 0;
+          if (rowId === 'cart-item-2') itemQtys.item2 = 0;
+          recalculateCart();
+        }, 300);
+      }
+    }
+
+    function recalculateCart() {
+      const total = (itemQtys.item1 * itemPrices.item1) + (itemQtys.item2 * itemPrices.item2);
+      const totalCount = itemQtys.item1 + itemQtys.item2;
+
+      document.getElementById('subtotalDisplay').textContent = formatINR(total);
+      document.getElementById('totalDisplay').textContent = formatINR(total);
+
+      const cartCountElems = document.querySelectorAll('.cart-count');
+      cartCountElems.forEach(el => el.textContent = totalCount);
+
+      if (totalCount === 0) {
+        document.querySelector('.cart-table-header').style.display = 'none';
+        document.getElementById('emptyCartMsg').style.display = 'block';
+      }
+    }
+  </script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>

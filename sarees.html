@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage Silk Sarees — Veloura Boutique</title>
+  <meta name="description"
+    content="Explore handcrafted pure Kanchipuram, Banarasi, and Mysore silk sarees at Veloura. Certified pure silk with authentic gold zari weaving.">
+
+  <!-- Google Fonts System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/new logo.png">
+  <link rel="apple-touch-icon" href="images/new logo.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Dedicated Sarees Collection Page Custom Layout */
+    .saree-hero {
+      background: linear-gradient(160deg, rgba(28, 20, 16, 0.75), rgba(60, 22, 32, 0.85)), url('images/cat_sarees.png') center/cover no-repeat;
+      padding: 130px 24px 60px;
+      text-align: center;
+      color: var(--ivory);
+    }
+
+    .saree-hero h1 {
+      font-family: var(--font-hero);
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 700;
+      color: var(--ivory);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .saree-hero p {
+      font-family: var(--font-section);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-style: italic;
+      color: var(--gold-pale);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Layout Main Grid (Sidebar + Products) */
+    .collection-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      padding-top: 40px;
+      padding-bottom: 90px;
+    }
+
+    /* Sidebar Filters Box */
+    .filter-sidebar {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      border: 1px solid rgba(176, 141, 87, 0.2);
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .filter-group {
+      border-bottom: 1px solid rgba(176, 141, 87, 0.15);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+    }
+
+    .filter-group:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .filter-title {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+
+    /* Range Slider */
+    .range-box {
+      margin-top: 14px;
+    }
+
+    .price-slider {
+      width: 100%;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+
+    .price-values {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--wine);
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Checkbox Lists */
+    .filter-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition: color 0.3s var(--ease);
+    }
+
+    .filter-item:hover {
+      color: var(--wine);
+    }
+
+    .filter-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--wine);
+      cursor: pointer;
+    }
+
+    /* Top Toolbar (Bar above product grid) */
+    .catalog-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .active-pills {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pill {
+      background: var(--ivory-deep);
+      border: 1px solid var(--beige-deep);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .result-count {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .sort-select {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--beige-deep);
+      background: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Products Grid Layout */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .collection-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-sidebar {
+        position: static;
+      }
+
+      .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .catalog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html#home" class="logo-link"><img src="images/new logo.png" alt="MIRAYA — Timeless Elegance"
+          class="nav-logo"></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="sarees.html" class="active">Sarees</a>
+        <a href="kids.html">Kids</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        
+        <a href="wishlist.html" class="icon-btn wishlist-btn-nav" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path
+              d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+          </svg>
+          <span class="wishlist-count">2</span>
+        </a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count">2</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO BANNERS ========== -->
+  <section class="saree-hero">
+    <div class="container reveal">
+      <div class="thread"><span>Heritage Collections</span></div>
+      <h1>HERITAGE SILK SAREES</h1>
+      <p>A heritage of unique weaving traditions handcrafted by master artisans</p>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTION LAYOUT ============ -->
+  <section class="section" style="padding-top: 20px;">
+    <div class="container collection-layout">
+
+      <!-- FILTER SIDEBAR -->
+      <aside class="filter-sidebar reveal">
+
+        <!-- Price Filter -->
+        <div class="filter-group">
+          <div class="filter-title">
+            <span>Price Range</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="range-box">
+            <input type="range" class="price-slider" id="priceRange" min="15000" max="100000" step="5000"
+              value="100000">
+            <div class="price-values">
+              <span>₹15,000</span>
+              <span id="priceMaxLabel">₹1,00,000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weave Category Filter -->
+        <div class="filter-group filter-group-category">
+          <div class="filter-title">
+            <span>Weave Craft</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <ul class="filter-list">
+            <label class="filter-item">
+              <input type="checkbox" value="kanchipuram"> Pure Kanchipuram Silk
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" value="banarasi"> Banarasi Katan Brocade
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" value="mysore"> Mysore Crepe Silk
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" value="soft-silk"> Fluid Soft Silks
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" value="tussar"> Wild Tussar Handloom
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" value="chiffon"> Festive Sheer Chiffon
+            </label>
+          </ul>
+        </div>
+
+        <!-- Zari Authenticity Filter -->
+        <div class="filter-group filter-group-zari">
+          <div class="filter-title">
+            <span>Zari Type</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <ul class="filter-list">
+            <label class="filter-item">
+              <input type="checkbox" value="24k-gold"> 24K Pure Gold Tested Zari
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" value="silver"> Silver Zari Brocade
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" value="half-fine"> Half-Fine Zarwork
+            </label>
+          </ul>
+        </div>
+
+      </aside>
+
+      <!-- PRODUCT CATALOG GRID -->
+      <main class="catalog-main">
+
+        <!-- Toolbar Bar -->
+        <div class="catalog-toolbar reveal">
+          <div class="active-pills">
+            <span class="pill pill-price">Price:₹1,00,000</span>
+            <span class="result-count">Showing 9 Heirloom Silks</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div style="position: relative;">
+              <input type="text" id="sareeSearchInput" placeholder="Search sarees..."
+                style="padding: 8px 16px 8px 36px; border-radius: 20px; border: 1px solid var(--beige-deep); font-family: var(--font-body); font-size: 13px; outline: none; width: 190px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-soft);">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+
+            <select class="sort-select" aria-label="Sort sarees">
+              <option>Featured Selection</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest Arrivals</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="catalog-grid reveal">
+
+          <!-- Card 1 -->
+          <div class="product-card" data-price="38500" data-category="kanchipuram" data-zari="24k-gold"
+            data-title="pure zari kanchipuram silk">
+            <div class="product-media">
+              <img src="images/pure gold.png" alt="Pure Zari Kanchipuram Silk Saree" loading="lazy">
+              <span class="badge">Royal Handloom</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>Pure Zari Kanchipuram Silk</h4>
+              <div class="product-price"><span class="price-now">₹38,500</span><span class="price-old">₹44,000</span>
+              </div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card" data-price="42000" data-category="banarasi" data-zari="24k-gold"
+            data-title="banarasi katan silk brocade">
+            <div class="product-media">
+              <img src="images/banarashi.png" alt="Banarasi Katan Silk Brocade Saree" loading="lazy">
+              <span class="badge">Gold Brocade</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>Banarasi Katan Silk Brocade</h4>
+              <div class="product-price"><span class="price-now">₹42,000</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card" data-price="31050" data-category="mysore" data-zari="24k-gold"
+            data-title="mysore crepe silk zarwork">
+            <div class="product-media">
+              <img src="images/Mysore.png" alt="Mysore Crepe Silk Zarwork Saree" loading="lazy">
+              <span class="badge">24K Gold Zarwork</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>Mysore Crepe Silk Zarwork</h4>
+              <div class="product-price"><span class="price-now">₹31,050</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card" data-price="24800" data-category="soft-silk" data-zari="silver"
+            data-title="fluid sheen soft silk saree">
+            <div class="product-media">
+              <img src="images/soft silk.png" alt="Fluid Sheen Soft Silk Saree" loading="lazy">
+              <span class="badge">Fluid Sheen</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>Fluid Sheen Soft Silk Saree</h4>
+              <div class="product-price"><span class="price-now">₹24,800</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="product-card" data-price="29700" data-category="kanchipuram" data-zari="half-fine"
+            data-title="geometric ikats & patola">
+            <div class="product-media">
+              <img src="images/ikat.png" alt="Geometric Ikats & Patola Silk Saree" loading="lazy">
+              <span class="badge">Patola Art</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>Geometric Ikats &amp; Patola</h4>
+              <div class="product-price"><span class="price-now">₹29,700</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="product-card" data-price="22500" data-category="tussar" data-zari="half-fine"
+            data-title="wild tussar handloom silk">
+            <div class="product-media">
+              <img src="images/Tusser.png" alt="Wild Tussar Handloom Silk Saree" loading="lazy">
+              <span class="badge">Wild Silk</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>Wild Tussar Handloom Silk</h4>
+              <div class="product-price"><span class="price-now">₹22,500</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="product-card" data-price="34200" data-category="banarasi" data-zari="24k-gold"
+            data-title="Chennaiatelier embroidered silk">
+            <div class="product-media">
+              <img src="images/embroidered silk.png" alt="ChennaiAtelier Embroidered Silk Saree" loading="lazy">
+              <span class="badge">ChennaiAtelier</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>ChennaiAtelier Embroidered Silk</h4>
+              <div class="product-price"><span class="price-now">₹34,200</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="product-card" data-price="18125" data-category="chiffon" data-zari="silver"
+            data-title="festive sheer chiffon saree">
+            <div class="product-media">
+              <img src="images/semi transparen.png" alt="Festive Sheer Chiffon Saree" loading="lazy">
+              <span class="badge">Festive Sheer</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <a href="product-details.html" class="quick-view">Quick View</a>
+            </div>
+            <div class="product-info">
+              <h4>Festive Sheer Chiffon Saree</h4>
+              <div class="product-price"><span class="price-now">₹18,125</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="product-card" data-price="27500" data-category="kanchipuram" data-zari="half-fine"
+            data-title="kanchi half fine brocade silk">
+            <div class="product-media">
+              <img src="images/image.png" alt="Kanchi Half Fine Brocade Silk Saree" loading="lazy">
+              <span class="badge">Brocade Weave</span>
+              <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+              <span class="quick-view">Quick View</span>
+            </div>
+            <div class="product-info">
+              <h4>Kanchi Half Fine Brocade Silk</h4>
+              <div class="product-price"><span class="price-now">₹27,500</span></div>
+              <button class="add-cart">Add to Cart</button>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html#home" class="footer-logo-link"><img src="images/logo_transparent.png" alt="MIRAYA — Timeless Elegance"
+              class="footer-logo"></a>
+          <p>A luxury boutique for handcrafted sarees, kids ethnic wear, and festive fashion — designed with heritage handloom artistry in Jaipur.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 17c1-3 1.5-6 1.5-8a2 2 0 1 1 4 0c0 1.5-1 3-2 3.5" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <path d="M15 8h-2a2 2 0 0 0-2 2v10" />
+                <path d="M9 13h6" />
+                <circle cx="12" cy="12" r="9" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="sarees.html">Kanchipuram Sarees</a></li>
+            <li><a href="sarees.html">Banarasi Silk</a></li>
+            <li><a href="kids.html">Kids Ethnic Collection</a></li>
+            <li><a href="sarees.html">Festive Couture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="about.html#artisans">Our Artisans</a></li>
+            <li><a href="contact.html">Careers &amp; Culture</a></li>
+            <li><a href="contact.html">Press &amp; Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="contact.html">Concierge &amp; Help</a></li>
+            <li><a href="wishlist.html">Wishlist Heirlooms</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Policies</h5>
+          <ul>
+            <li><a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="policy-link" data-policy="returns">Return &amp; Refund</a></li>
+            <li><a href="#" class="policy-link" data-policy="shipping">Shipping Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="cancellation">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MIRAYA Atelier. All rights reserved.</span>
+        <div class="footer-policy-bottom">
+          <a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a> • 
+          <a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a> • 
+          <a href="#" class="policy-link" data-policy="returns">Return Policy</a>
+        </div>
+        <span>Crafted with care in Jaipur, India.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master External Script -->
+  <script src="script.js" defer></script>
+  <script>
+    // Live Price Range Label Handler
+    const priceRange = document.getElementById('priceRange');
+    const priceMaxLabel = document.getElementById('priceMaxLabel');
+    if (priceRange && priceMaxLabel) {
+      priceRange.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        priceMaxLabel.textContent = '₹' + val.toLocaleString('en-IN');
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Veloura Heritage Silks & Atelier Concierge</title>
+  <meta name="description"
+    content="Get in touch with Veloura's master drapers. Book a private bridal consultation, inquire about custom handloom silk orders, or visit our Chennaiflagship boutique.">
+
+  <!-- Google Fonts System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/new logo.png">
+  <link rel="apple-touch-icon" href="images/new logo.png">
+  <title>Contact Us — MIRAYA Timeless Elegance</title>
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Dedicated Contact Page Custom Hero & Map Styles */
+    .contact-hero {
+      position: relative;
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(160deg, rgba(18, 13, 10, 0.75) 0%, rgba(44, 27, 34, 0.65) 50%, rgba(36, 16, 23, 0.88) 100%),
+        url('images/hero.png') center 20%/cover no-repeat;
+      padding: 140px 24px 70px;
+    }
+
+    .contact-hero-content {
+      max-width: 780px;
+    }
+
+    .contact-hero h1 {
+      font-family: var(--font-hero);
+      font-size: clamp(38px, 5.5vw, 64px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--ivory);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .contact-hero p {
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: rgba(251, 248, 243, 0.88);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* Map Box */
+    .map-box {
+      margin-top: 50px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(176, 141, 87, 0.25);
+      box-shadow: var(--shadow-md);
+      height: 320px;
+      position: relative;
+      background: var(--wine-deep);
+    }
+
+    .map-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(160deg, rgba(44, 27, 34, 0.88), rgba(28, 20, 16, 0.92)), url('images/split_banner.png') center/cover;
+      color: var(--ivory);
+      padding: 24px;
+    }
+
+    .map-overlay h4 {
+      font-family: var(--font-section);
+      font-size: 32px;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .map-overlay p {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: rgba(251, 248, 243, 0.85);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html#home" class="logo-link"><img src="images/new logo.png" alt="MIRAYA — Timeless Elegance"
+          class="nav-logo"></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="sarees.html">Sarees</a>
+        <a href="kids.html">Kids</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        
+        <a href="wishlist.html" class="icon-btn wishlist-btn-nav" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path
+              d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+          </svg>
+          <span class="wishlist-count">2</span>
+        </a>
+        <a href="#" class="icon-btn cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count">2</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CONTACT HERO ============ -->
+  <section class="contact-hero">
+    <div class="contact-hero-content reveal">
+      <div class="thread"><span>Atelier Concierge</span></div>
+      <h1>CONNECT WITH OUR ATELIER</h1>
+      <p>Book a one-on-one virtual styling consultation, inquire about custom heirloom handloom orders, or visit our
+        flagship Chennaiboutique.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT FORM & INFO SECTION ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid reveal">
+
+        <!-- Contact Form Box -->
+        <div class="contact-card">
+          <h3>Send an Inquiry</h3>
+          <form class="contact-form"
+            onsubmit="event.preventDefault(); alert('Thank you, Kavya Sharma! Your inquiry regarding Bridal Consultation has been received. Our master draper will contact you within 24 hours at +91 98765 43210.');">
+            <div class="form-row">
+              <input type="text" value="Kavya" placeholder="Your Name" required aria-label="Your Name">
+              <input type="email" value="contact@mirayaboutique.com" placeholder="Your Email" required
+                aria-label="Your Email">
+            </div>
+            <div class="form-row">
+              <input type="tel" value="+91 98765 43210" placeholder="Phone / WhatsApp Number" aria-label="Phone Number">
+              <select aria-label="Inquiry Type">
+                <option selected>Bridal Consultation</option>
+                <option>Custom Handloom Weave Order</option>
+                <option>Order &amp; Shipping Status</option>
+                <option>General Atelier Inquiry</option>
+              </select>
+            </div>
+            <textarea rows="4" placeholder="How can our master drapers assist you?" required
+              aria-label="Message">I would like to inquire about a custom bridal Kanchipuram silk saree in crimson red with 24K gold tested zari weaving for an upcoming wedding ceremony.</textarea>
+            <button type="submit" class="btn btn-gold" style="align-self: flex-start; padding: 14px 32px;">Send Inquiry
+              to Atelier</button>
+          </form>
+        </div>
+
+        <!-- Contact Info Box -->
+        <div class="contact-info-card">
+          <div class="contact-info-header">
+            <h3>Get In Touch</h3>
+            <img src="images/logo_transparent.png" alt="MIRAYA — Timeless Elegance" class="contact-card-logo">
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <strong>Address</strong>
+              <p>Plot No. 12, Heritage Galleria, Johari Bazar, Chennai– 600024</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div>
+              <strong>Hotline / Phone</strong>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </div>
+            <div>
+              <strong>Email Address</strong>
+              <p>contact@mirayaboutique.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div>
+              <strong>Visiting Hours</strong>
+              <p>Monday — Saturday: 9:30 AM — 6:30 PM IST</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MAP LOCATION BOX -->
+      <div class="map-box reveal">
+        <div class="map-overlay">
+          <h4>Visit Our Boutique &amp; Office</h4>
+          <p>Plot No. 12, Heritage Galleria, Johari Bazar, Chennai– 600024</p>
+          <a href="https://maps.google.com/?q=Johari+Bazar,+Jaipur+600024" target="_blank" class="btn btn-gold"
+            style="padding: 12px 28px;">Open Directions in Google Maps</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html#home" class="footer-logo-link"><img src="images/logo_transparent.png" alt="MIRAYA — Timeless Elegance"
+              class="footer-logo"></a>
+          <p>A luxury boutique for handcrafted sarees, kids ethnic wear, and festive fashion — designed with heritage handloom artistry in Jaipur.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 17c1-3 1.5-6 1.5-8a2 2 0 1 1 4 0c0 1.5-1 3-2 3.5" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <path d="M15 8h-2a2 2 0 0 0-2 2v10" />
+                <path d="M9 13h6" />
+                <circle cx="12" cy="12" r="9" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="sarees.html">Kanchipuram Sarees</a></li>
+            <li><a href="sarees.html">Banarasi Silk</a></li>
+            <li><a href="kids.html">Kids Ethnic Collection</a></li>
+            <li><a href="sarees.html">Festive Couture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="about.html#artisans">Our Artisans</a></li>
+            <li><a href="contact.html">Careers &amp; Culture</a></li>
+            <li><a href="contact.html">Press &amp; Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="contact.html">Concierge &amp; Help</a></li>
+            <li><a href="wishlist.html">Wishlist Heirlooms</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Policies</h5>
+          <ul>
+            <li><a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="policy-link" data-policy="returns">Return &amp; Refund</a></li>
+            <li><a href="#" class="policy-link" data-policy="shipping">Shipping Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="cancellation">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MIRAYA Atelier. All rights reserved.</span>
+        <div class="footer-policy-bottom">
+          <a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a> • 
+          <a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a> • 
+          <a href="#" class="policy-link" data-policy="returns">Return Policy</a>
+        </div>
+        <span>Crafted with care in Jaipur, India.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master External Script -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>

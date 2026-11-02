@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Wishlist — MIRAYA Timeless Elegance</title>
+  <meta name="description"
+    content="View your saved luxury silk sarees, handlooms, and festive ensembles in your MIRAYA wishlist.">
+
+  <!-- Google Fonts System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/new logo.png">
+  <link rel="apple-touch-icon" href="images/new logo.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Dedicated Wishlist Page Styling */
+    .wishlist-section {
+      padding: 130px 0 100px;
+      background: var(--ivory);
+      min-height: 80vh;
+    }
+
+    .wishlist-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .wishlist-title {
+      font-family: var(--font-hero);
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .wishlist-subtitle {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--ink-soft);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .wishlist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .wishlist-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(176, 141, 87, 0.2);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+      position: relative;
+    }
+
+    .wishlist-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .wishlist-card-media {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      background: var(--ivory-deep);
+    }
+
+    .wishlist-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease);
+    }
+
+    .wishlist-card:hover .wishlist-card-media img {
+      transform: scale(1.06);
+    }
+
+    .wishlist-remove-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s var(--ease);
+      z-index: 2;
+    }
+
+    .wishlist-remove-btn:hover {
+      background: var(--wine);
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .wishlist-badge {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(36, 30, 24, 0.82);
+      color: var(--gold-pale);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .wishlist-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .wishlist-card-title {
+      font-family: var(--font-section);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .wishlist-card-price {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--wine);
+      margin-bottom: 20px;
+    }
+
+    .wishlist-card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-move-cart {
+      flex: 1;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-move-cart:hover {
+      background: var(--wine);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Empty Wishlist Card */
+    .empty-wishlist-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--beige-deep);
+      padding: 70px 30px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .empty-wishlist-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--ivory);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      border: 1px solid var(--beige-deep);
+    }
+
+    .empty-wishlist-card h3 {
+      font-family: var(--font-hero);
+      font-size: 26px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .empty-wishlist-card p {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 992px) {
+      .wishlist-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .wishlist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar navbar-solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html#home" class="logo-link"><img src="images/new logo.png" alt="MIRAYA — Timeless Elegance"
+          class="nav-logo"></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="sarees.html">Sarees</a>
+        <a href="kids.html">Kids</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        
+        <a href="wishlist.html" class="icon-btn active wishlist-btn-nav" aria-label="Wishlist" style="background: var(--gold); border-color: var(--gold); color: #fff;">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.6">
+            <path
+              d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+          </svg>
+          <span class="wishlist-count">2</span>
+        </a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count">2</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ WISHLIST MAIN SECTION ============ -->
+  <section class="wishlist-section">
+    <div class="container">
+      
+      <div class="wishlist-header reveal">
+        <div class="thread"><span>Saved Heirlooms</span></div>
+        <h1 class="wishlist-title">MY WISHLIST</h1>
+        <p class="wishlist-subtitle">Handpicked sarees and festive ensembles saved for your upcoming celebrations.</p>
+      </div>
+
+      <!-- WISHLIST CARDS GRID -->
+      <div class="wishlist-grid reveal" id="wishlistGrid">
+        <!-- Dynamically rendered via JS -->
+      </div>
+
+      <!-- EMPTY WISHLIST STATE -->
+      <div class="empty-wishlist-card reveal" id="emptyWishlistMsg" style="display: none;">
+        <div class="empty-wishlist-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="32" height="32">
+            <path d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+          </svg>
+        </div>
+        <h3>Your Wishlist is Empty</h3>
+        <p>You haven't saved any heirloom sarees to your wishlist yet. Explore our handcrafted collection to curate your dream wardrobe.</p>
+        <a href="sarees.html" class="btn btn-gold" style="padding: 14px 32px;">Explore Sarees Collection</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html#home" class="footer-logo-link"><img src="images/logo_transparent.png" alt="MIRAYA — Timeless Elegance"
+              class="footer-logo"></a>
+          <p>A luxury boutique for handcrafted sarees, kids ethnic wear, and festive fashion — designed with heritage handloom artistry in Jaipur.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 17c1-3 1.5-6 1.5-8a2 2 0 1 1 4 0c0 1.5-1 3-2 3.5" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <path d="M15 8h-2a2 2 0 0 0-2 2v10" />
+                <path d="M9 13h6" />
+                <circle cx="12" cy="12" r="9" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="sarees.html">Kanchipuram Sarees</a></li>
+            <li><a href="sarees.html">Banarasi Silk</a></li>
+            <li><a href="kids.html">Kids Ethnic Collection</a></li>
+            <li><a href="sarees.html">Festive Couture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="about.html#artisans">Our Artisans</a></li>
+            <li><a href="contact.html">Careers &amp; Culture</a></li>
+            <li><a href="contact.html">Press &amp; Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="contact.html">Concierge &amp; Help</a></li>
+            <li><a href="wishlist.html">Wishlist Heirlooms</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Policies</h5>
+          <ul>
+            <li><a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="policy-link" data-policy="returns">Return &amp; Refund</a></li>
+            <li><a href="#" class="policy-link" data-policy="shipping">Shipping Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="cancellation">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MIRAYA Atelier. All rights reserved.</span>
+        <div class="footer-policy-bottom">
+          <a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a> • 
+          <a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a> • 
+          <a href="#" class="policy-link" data-policy="returns">Return Policy</a>
+        </div>
+        <span>Crafted with care in Jaipur, India.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Wishlist Dynamic Logic Script -->
+  <script>
+    const defaultWishlistItems = [
+      {
+        id: 'pure-zari-kanchipuram',
+        title: 'Pure Zari Kanchipuram Silk Saree',
+        price: 38500,
+        badge: 'Royal Handloom',
+        image: 'images/pure gold.png'
+      },
+      {
+        id: 'banarasi-katan-brocade',
+        title: 'Banarasi Katan Silk Brocade Saree',
+        price: 42000,
+        badge: 'Gold Brocade',
+        image: 'images/banarashi.png'
+      }
+    ];
+
+    function getWishlist() {
+      const stored = localStorage.getItem('miraya_wishlist');
+      if (!stored) {
+        localStorage.setItem('miraya_wishlist', JSON.stringify(defaultWishlistItems));
+        return defaultWishlistItems;
+      }
+      try {
+        return JSON.parse(stored);
+      } catch (e) {
+        return defaultWishlistItems;
+      }
+    }
+
+    function saveWishlist(items) {
+      localStorage.setItem('miraya_wishlist', JSON.stringify(items));
+      renderWishlistPage();
+    }
+
+    function renderWishlistPage() {
+      const grid = document.getElementById('wishlistGrid');
+      const emptyMsg = document.getElementById('emptyWishlistMsg');
+      const wishlist = getWishlist();
+
+      if (!wishlist || wishlist.length === 0) {
+        grid.style.display = 'none';
+        emptyMsg.style.display = 'block';
+        return;
+      }
+
+      grid.style.display = 'grid';
+      emptyMsg.style.display = 'none';
+      grid.innerHTML = '';
+
+      wishlist.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'wishlist-card';
+        card.innerHTML = `
+          <div class="wishlist-card-media">
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+            <button class="wishlist-remove-btn" onclick="removeFromWishlist('${item.id}')" aria-label="Remove item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <span class="wishlist-badge">${item.badge || 'Heirloom Handloom'}</span>
+          </div>
+          <div class="wishlist-card-body">
+            <div>
+              <h3 class="wishlist-card-title">${item.title}</h3>
+              <div class="wishlist-card-price">₹${Number(item.price).toLocaleString('en-IN')}</div>
+            </div>
+            <div class="wishlist-card-actions">
+              <button class="btn-move-cart" onclick="moveToCart('${item.id}')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                Move to Shopping Bag
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function removeFromWishlist(id) {
+      let wishlist = getWishlist();
+      wishlist = wishlist.filter(item => item.id !== id);
+      saveWishlist(wishlist);
+    }
+
+    function moveToCart(id) {
+      const wishlist = getWishlist();
+      const item = wishlist.find(i => i.id === id);
+      if (!item) return;
+
+      let cart = JSON.parse(localStorage.getItem('miraya_cart')) || [];
+      const existing = cart.find(c => c.title === item.title);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          title: item.title,
+          price: item.price,
+          qty: 1,
+          image: item.image
+        });
+      }
+      localStorage.setItem('miraya_cart', JSON.stringify(cart));
+      
+      // Update cart count badge
+      const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+      document.querySelectorAll('.cart-count').forEach(el => el.textContent = totalQty);
+
+      // Remove from wishlist
+      removeFromWishlist(id);
+
+      alert(`"${item.title}" has been moved to your Shopping Bag!`);
+    }
+
+    document.addEventListener('DOMContentLoaded', renderWishlistPage);
+  </script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>

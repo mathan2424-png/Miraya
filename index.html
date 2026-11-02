@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/new logo.png">
+  <link rel="apple-touch-icon" href="images/new logo.png">
+  <title>MIRAYA — Timeless Elegance</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo-link"><img src="images/new logo.png" alt="MIRAYA — Timeless Elegance"
+          class="nav-logo"></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="sarees.html">Sarees</a>
+        <a href="kids.html">Kids</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        
+        <a href="wishlist.html" class="icon-btn wishlist-btn-nav" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+          </svg>
+          <span class="wishlist-count">2</span>
+        </a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 8h12l-1 12H7L6 8Z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+          </svg>
+          <span class="cart-count">2</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+
+
+
+    <div class="container hero-inner">
+      <h1>Where Elegance<br>Meets Fashion</h1>
+      <p>Handpicked collections crafted for modern women — heirloom weaves, reimagined.</p>
+      <div class="hero-ctas">
+        <a href="#categories" class="btn btn-gold">Explore Collection</a>
+        <a href="#arrivals" class="btn btn-outline">New Arrivals</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED CATEGORIES ============ -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="category-grid">
+
+        <a href="sarees.html" class="category-card reveal">
+          <div class="category-swatch swatch-sarees"></div>
+          <div class="category-body">
+            <div class="category-index">01</div>
+            <h3>Sarees</h3>
+            <span class="category-link">Shop Now
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="category-card reveal">
+          <div class="category-swatch swatch-kurtis"></div>
+          <div class="category-body">
+            <div class="category-index">02</div>
+            <h3>Kurtis</h3>
+            <span class="category-link">Shop Now
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="category-card reveal">
+          <div class="category-swatch swatch-lehengas"></div>
+          <div class="category-body">
+            <div class="category-index">03</div>
+            <h3>Lehengas</h3>
+            <span class="category-link">Shop Now
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="category-card reveal">
+          <div class="category-swatch swatch-party"></div>
+          <div class="category-body">
+            <div class="category-index">04</div>
+            <h3>Party Wear</h3>
+            <span class="category-link">Shop Now
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="category-card reveal category-accessories-card">
+          <div class="category-swatch swatch-accessories"></div>
+          <div class="category-body">
+            <div class="category-index">05</div>
+            <h3>Accessories</h3>
+            <span class="category-link">Shop Now
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEW ARRIVALS ============ -->
+  <section class="section" id="arrivals">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="thread"><span>New In</span></div>
+        <h2>New Arrivals</h2>
+        <p>Fresh off the loom — this season's most coveted pieces, in limited runs.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Product card template repeated x8 -->
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/prod_1.png" alt="Zari Silk Saree">
+            <span class="badge">New</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <span class="quick-view">Quick View</span>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Zari Silk Saree</h4>
+            <div class="product-price"><span class="price-now">₹18,900</span><span class="price-old">₹24,500</span>
+            </div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/prod_2.png" alt="Embroidered Anarkali Kurti">
+            <span class="badge">Sale</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <a href="product-details.html" class="quick-view">Quick View</a>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Embroidered Anarkali</h4>
+            <div class="product-price"><span class="price-now">₹6,400</span><span class="price-old">₹8,200</span></div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/prod_3.png" alt="Bridal Lehenga — Noor">
+            <span class="badge">Bestseller</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <a href="product-details.html" class="quick-view">Quick View</a>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Bridal Lehenga — Noor</h4>
+            <div class="product-price"><span class="price-now">₹42,000</span></div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/cat_kurtis.png" alt="Sequin Party Gown">
+            <span class="badge">New</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <a href="product-details.html" class="quick-view">Quick View</a>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Sequin Party Gown</h4>
+            <div class="product-price"><span class="price-now">₹15,600</span></div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/prod_5.png" alt="Kundan Choker Set">
+            <span class="badge">Sale</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <a href="product-details.html" class="quick-view">Quick View</a>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Kundan Choker Set</h4>
+            <div class="product-price"><span class="price-now">₹9,200</span><span class="price-old">₹11,500</span></div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/prod_6.png" alt="Banarasi Silk Saree">
+            <span class="badge">Bestseller</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <a href="product-details.html" class="quick-view">Quick View</a>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Banarasi Silk Saree</h4>
+            <div class="product-price"><span class="price-now">₹22,300</span></div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/prod_7.png" alt="Chikankari Kurti Set">
+            <span class="badge">New</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <a href="product-details.html" class="quick-view">Quick View</a>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Chikankari Kurti Set</h4>
+            <div class="product-price"><span class="price-now">₹5,100</span></div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-media">
+            <img src="images/prod_8.png" alt="Georgette Party Saree">
+            <span class="badge">Sale</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.6">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg></button>
+            <a href="product-details.html" class="quick-view">Quick View</a>
+          </div>
+          <div class="product-info">
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <h4>Georgette Party Saree</h4>
+            <div class="product-price"><span class="price-now">₹11,800</span><span class="price-old">₹14,900</span>
+            </div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTION BANNER — split screen ============ -->
+  <section class="split" id="collection">
+    <div class="split-left">
+      <div class="thread thread--left"><span>Vogue Edit — Limited Run</span></div>
+      <h2>Festive<br>Collection <em>2026</em></h2>
+      <p>A capsule of hand-embroidered silhouettes, cast in gold and wine — built for the season's most luminous nights.
+      </p>
+      <a href="#" class="btn btn-gold">Shop the Collection</a>
+      <div class="split-year">26</div>
+    </div>
+    <div class="split-right">
+      <div class="split-image"></div>
+      <div class="split-frame"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT US ============ -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="about-media reveal">
+        <img src="images/about.png" alt="Veloura ChennaiAtelier Craftsmanship" class="about-img" loading="lazy">
+        <div class="about-badge">Est.<br>2020</div>
+      </div>
+      <div class="about-copy reveal">
+        <div class="thread thread--left"><span>Our Story</span></div>
+        <h2>Where Heritage Meets Modern Elegance</h2>
+        <p>Founded in Jaipur, Veloura was created out of a deep reverence for India's handloom traditions. We work
+          directly with over 1,200 master artisan families across Kanchipuram, Varanasi, Mysore, and Bengal.</p>
+        <p>Every saree and ensemble is hand-woven using 100% certified pure Mulberry silk and real zari threads —
+          creating wearable heirlooms to be cherished today and passed down to future generations.</p>
+        <div class="about-stats">
+          <div><strong>1,200+</strong><span>Artisan Families</span></div>
+          <div><strong>40k+</strong><span>Heirlooms Crafted</span></div>
+          <div><strong>100%</strong><span>Pure Silk &amp; Zari</span></div>
+        </div>
+        <a href="about.html" class="btn btn-gold" style="margin-top: 28px; display: inline-flex;">Read Our Full Atelier
+          Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="section section-alt" id="why-us">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="thread"><span>The Veloura Promise</span></div>
+        <h2>Why Choose Us</h2>
+        <p>Uncompromising craftsmanship, complimentary insured shipping, and bespoke styling services.</p>
+      </div>
+
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4Z" />
+            </svg></div>
+          <h4>Authenticated Craft</h4>
+          <p>Every garment is hand-verified for weave purity, embroidery precision and finish before it reaches you.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="7" width="18" height="13" rx="2" />
+              <path d="M8 7V5a4 4 0 0 1 8 0v2" />
+            </svg></div>
+          <h4>Free Insured Shipping</h4>
+          <p>Complimentary, fully insured express delivery on every order across India and internationally.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 12a9 9 0 1 1-3-6.7" />
+              <polyline points="21 4 21 9 16 9" />
+            </svg></div>
+          <h4>15-Day Easy Returns</h4>
+          <p>Not the exact shade or fit? Return within 15 days, no questions asked, with doorstep pick-up.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M20 21c0-4-3.5-6-8-6s-8 2-8 6" />
+              <circle cx="12" cy="7" r="4" />
+            </svg></div>
+          <h4>Personal Styling</h4>
+          <p>Book a one-on-one virtual or in-atelier session with our master stylists for festive &amp; bridal edits.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ HERITAGE WEAVES — SHOP BY CATEGORY ============ -->
+  <section class="section weave-section" id="weaves">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="thread"><span>Heirloom Handlooms</span></div>
+        <h2>Shop by Heritage Weaves</h2>
+        <p>Every weave tells a story — explore handcrafted silks across India's finest weaving traditions.</p>
+      </div>
+
+      <div class="weave-grid reveal">
+
+        <a href="product-details.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/pure gold.png" alt="Pure Zari Kanchipuram" loading="lazy">
+            <span class="weave-badge">Royal Handloom</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Pure Zari Kanchipuram</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/banarashi.png" alt="Banarasi Katan Silk" loading="lazy">
+            <span class="weave-badge">Gold Brocade</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Banarasi Katan Silk</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/silk cotton.png" alt="Silk Cotton" loading="lazy">
+            <span class="weave-badge">Lightweight</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Silk Cotton</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/soft silk.png" alt="Soft Silks" loading="lazy">
+            <span class="weave-badge">Fluid Sheen</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Soft Silks</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/Mysore.png" alt="Mysore Crepe" loading="lazy">
+            <span class="weave-badge">Pure Gold Zarwork</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Mysore Crepe</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/ikat.png" alt="Ikats & Patola" loading="lazy">
+            <span class="weave-badge">Geometric Art</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Ikats &amp; Patola</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/semi transparen.png" alt="Chiffon" loading="lazy">
+            <span class="weave-badge">Festive Sheer</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Chiffon</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/Tusser.png" alt="Tussar" loading="lazy">
+            <span class="weave-badge">Wild Silk</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Tussar</h4>
+          </div>
+        </a>
+
+        <a href="sarees.html" class="weave-card">
+          <div class="weave-media">
+            <img src="images/embroidered silk.png" alt="Embroidered Silk" loading="lazy">
+            <span class="weave-badge">ChennaiAtelier</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Embroidered Silk</h4>
+          </div>
+        </a>
+
+        <a href="#categories" class="weave-card">
+          <div class="weave-media">
+            <img src="images/image.png" alt="Kanchi Half Fine" loading="lazy">
+            <span class="weave-badge">Brocade Weave</span>
+            <span class="weave-overlay-btn">Explore Collection <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+          <div class="weave-info">
+            <h4>Kanchi Half Fine</h4>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="thread"><span>Client Words</span></div>
+        <h2>What They're Saying</h2>
+        <p>A few notes from women who've made IRIS part of their story.</p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+          </div>
+          <p>The Banarasi saree I ordered for my sister's wedding felt like it was made by hand for exactly that day.
+            The zari work is unlike anything I've seen from a retail label.</p>
+          <div class="testimonial-person">
+            <div class="avatar">A</div>
+            <div><strong>Ananya</strong><span>Chennai</span></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+          </div>
+          <p>Their styling consultation genuinely changed how I shop for festive wear. They understood my colouring and
+            build better than any store assistant ever has.</p>
+          <div class="testimonial-person">
+            <div class="avatar">K</div>
+            <div><strong>Kavya</strong><span>Chennai</span></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+            </svg>
+          </div>
+          <p>Packaging, delivery, the handwritten note inside the box — every touchpoint felt considered. This is what
+            online shopping for heirloom pieces should feel like.</p>
+          <div class="testimonial-person">
+            <div class="avatar">S</div>
+            <div><strong>Sana Iyer</strong><span>Mumbai</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT US & ATELIER CONCIERGE ============ -->
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo-link"><img src="images/logo_transparent.png" alt="MIRAYA — Timeless Elegance"
+              class="footer-logo"></a>
+          <p>A luxury boutique for handcrafted sarees, kids ethnic wear, and festive fashion — designed with heritage handloom artistry in Jaipur.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 17c1-3 1.5-6 1.5-8a2 2 0 1 1 4 0c0 1.5-1 3-2 3.5" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <path d="M15 8h-2a2 2 0 0 0-2 2v10" />
+                <path d="M9 13h6" />
+                <circle cx="12" cy="12" r="9" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="sarees.html">Kanchipuram Sarees</a></li>
+            <li><a href="sarees.html">Banarasi Silk</a></li>
+            <li><a href="kids.html">Kids Ethnic Collection</a></li>
+            <li><a href="sarees.html">Festive Couture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="about.html#artisans">Our Artisans</a></li>
+            <li><a href="contact.html">Careers &amp; Culture</a></li>
+            <li><a href="contact.html">Press &amp; Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="contact.html">Concierge &amp; Help</a></li>
+            <li><a href="wishlist.html">Wishlist Heirlooms</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Policies</h5>
+          <ul>
+            <li><a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="policy-link" data-policy="returns">Return &amp; Refund</a></li>
+            <li><a href="#" class="policy-link" data-policy="shipping">Shipping Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="cancellation">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MIRAYA Atelier. All rights reserved.</span>
+        <div class="footer-policy-bottom">
+          <a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a> • 
+          <a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a> • 
+          <a href="#" class="policy-link" data-policy="returns">Return Policy</a>
+        </div>
+        <span>Crafted with care in Jaipur, India.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master External Script -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Zari Kanchipuram Silk Saree — MIRAYA Timeless Elegance</title>
+  <meta name="description"
+    content="Shop Pure Zari Kanchipuram Silk Saree at MIRAYA. Handcrafted by master artisans with 24K gold tested zari. Free express shipping and Silk Mark Certified.">
+
+  <!-- Google Fonts System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/new logo.png">
+  <link rel="apple-touch-icon" href="images/new logo.png">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Dedicated Product Details Page Custom Luxury Styling */
+    .product-details-section {
+      padding: 130px 0 80px;
+      background: var(--ivory);
+    }
+
+    .breadcrumb-nav {
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: var(--ink-soft);
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--ink-soft);
+      transition: color 0.3s var(--ease);
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--wine);
+    }
+
+    .breadcrumb-nav .sep {
+      color: var(--gold);
+    }
+
+    .breadcrumb-nav .current {
+      color: var(--wine);
+      font-weight: 600;
+    }
+
+    .pdp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* Left Gallery System */
+    .pdp-gallery {
+      position: sticky;
+      top: 100px;
+    }
+
+    .pdp-main-image {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(176, 141, 87, 0.2);
+      background: #fff;
+    }
+
+    .pdp-main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s var(--ease);
+    }
+
+    .pdp-main-image:hover img {
+      transform: scale(1.06);
+    }
+
+    .pdp-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 3;
+      background: var(--wine);
+      color: var(--ivory);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pdp-wishlist-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s var(--ease);
+    }
+
+    .pdp-wishlist-btn:hover {
+      background: var(--wine);
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .pdp-thumbs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .thumb-item {
+      height: 90px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: all 0.3s var(--ease);
+      background: #fff;
+    }
+
+    .thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-item:hover,
+    .thumb-item.active {
+      opacity: 1;
+      border-color: var(--gold);
+      box-shadow: 0 4px 12px rgba(176, 141, 87, 0.3);
+    }
+
+    /* Right Details Panel */
+    .pdp-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pdp-title {
+      font-family: var(--font-hero);
+      font-size: clamp(28px, 3.2vw, 40px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .pdp-subtitle {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+
+    .pdp-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .pdp-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--gold);
+    }
+
+    .pdp-stars svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .pdp-reviews-count {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .pdp-price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 16px 20px;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(176, 141, 87, 0.2);
+      margin-bottom: 24px;
+    }
+
+    .pdp-price-now {
+      font-family: var(--font-body);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--wine);
+      font-variant-numeric: lining-nums proportional-nums;
+      -webkit-font-feature-settings: "lnum" 1, "pnum" 1;
+      font-feature-settings: "lnum" 1, "pnum" 1;
+    }
+
+    .pdp-price-old {
+      font-family: var(--font-body);
+      font-size: 18px;
+      color: #a49a8d;
+      text-decoration: line-through;
+      font-variant-numeric: lining-nums proportional-nums;
+      -webkit-font-feature-settings: "lnum" 1, "pnum" 1;
+      font-feature-settings: "lnum" 1, "pnum" 1;
+    }
+
+    .pdp-tax-tag {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      color: #27ae60;
+      background: rgba(39, 174, 96, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .pdp-action-box {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .qty-picker {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .qty-picker label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .qty-controls {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--beige-deep);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .qty-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--ivory);
+      transition: background 0.2s var(--ease);
+    }
+
+    .qty-btn:hover {
+      background: var(--gold-light);
+      color: #fff;
+    }
+
+    .qty-val {
+      width: 48px;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .pdp-btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .btn-add-cart {
+      padding: 16px 24px;
+      background: var(--wine);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s var(--ease);
+    }
+
+    .btn-add-cart:hover {
+      background: var(--wine-deep);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .btn-buy-now {
+      padding: 16px 24px;
+      background: var(--gold);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s var(--ease);
+    }
+
+    .btn-buy-now:hover {
+      background: var(#B08D57);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    /* Trust Badges Grid */
+    .pdp-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px dashed rgba(176, 141, 87, 0.3);
+      border-bottom: 1px dashed rgba(176, 141, 87, 0.3);
+      margin-bottom: 30px;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+    }
+
+    .trust-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(176, 141, 87, 0.12);
+      color: var(--wine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trust-item span {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    /* Tabbed Info System */
+    .pdp-tabs-container {
+      margin-top: 10px;
+    }
+
+    .pdp-tab-buttons {
+      display: flex;
+      gap: 24px;
+      border-bottom: 2px solid var(--beige-deep);
+      margin-bottom: 20px;
+    }
+
+    .pdp-tab-btn {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      padding-bottom: 12px;
+      position: relative;
+      transition: color 0.3s var(--ease);
+    }
+
+    .pdp-tab-btn.active {
+      color: var(--wine);
+    }
+
+    .pdp-tab-btn.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background: var(--wine);
+    }
+
+    .pdp-tab-content {
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+    }
+
+    .pdp-tab-pane {
+      display: none;
+    }
+
+    .pdp-tab-pane.active {
+      display: block;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .specs-table td {
+      padding: 10px 14px;
+      font-size: 13.5px;
+      border-bottom: 1px solid var(--beige-deep);
+    }
+
+    .specs-table td:first-child {
+      font-weight: 600;
+      color: var(--wine);
+      width: 40%;
+      background: rgba(251, 248, 243, 0.6);
+    }
+
+    @media (max-width: 900px) {
+      .pdp-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .pdp-gallery {
+        position: static;
+      }
+
+      .pdp-btn-group {
+        grid-template-columns: 1fr;
+      }
+
+      .pdp-trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar navbar-solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html#home" class="logo-link"><img src="images/new logo.png" alt="MIRAYA — Timeless Elegance"
+          class="nav-logo"></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="sarees.html" class="active">Sarees</a>
+        <a href="kids.html">Kids</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        
+        <a href="wishlist.html" class="icon-btn wishlist-btn-nav" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path
+              d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+          </svg>
+          <span class="wishlist-count">2</span>
+        </a>
+        <a href="cart.html" class="icon-btn cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-count">2</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PRODUCT DETAILS MAIN SECTION ============ -->
+  <section class="product-details-section">
+    <div class="container">
+
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <a href="sarees.html">Sarees Collection</a>
+        <span class="sep">›</span>
+        <span class="current">Pure Zari Kanchipuram Silk — CB001</span>
+      </nav>
+
+      <div class="pdp-grid">
+
+        <!-- LEFT: GALLERY CAROUSEL -->
+        <div class="pdp-gallery reveal">
+          <div class="pdp-main-image">
+            <span class="pdp-badge">Royal Handloom</span>
+            <button class="pdp-wishlist-btn" aria-label="Add to Wishlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
+                <path
+                  d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+              </svg>
+            </button>
+            <img id="pdpMainImg" src="images/pure gold.png" alt="Pure Zari Kanchipuram Silk Saree">
+          </div>
+
+          <!-- Thumbnail Row -->
+          <div class="pdp-thumbs">
+            <div class="thumb-item active" onclick="changeMainImage('images/pure gold.png', this)">
+              <img src="images/pure gold.png" alt="Main View">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('images/banarashi.png', this)">
+              <img src="images/banarashi.png" alt="Zari Weave Detail">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('images/Mysore.png', this)">
+              <img src="images/Mysore.png" alt="Pallu Border">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('images/soft silk.png', this)">
+              <img src="images/soft silk.png" alt="Fabric Texture">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('images/ikat.png', this)">
+              <img src="images/ikat.png" alt="Drape Preview">
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: PRODUCT INFO & PURCHASING -->
+        <div class="pdp-info reveal">
+          <h1 class="pdp-title">Pure Zari Kanchipuram Silk Saree — CB001</h1>
+          <p class="pdp-subtitle">Elegant traditional drape featuring a striking contrast border woven with 24K pure
+            gold tested zari. A timeless heirloom creation crafted for grand celebrations, weddings, and cultural
+            rituals.</p>
+
+          <!-- Star Rating & Review -->
+          <div class="pdp-rating-row">
+            <div class="pdp-stars">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15 9 22 9 16.5 13.5 18.5 21 12 16.8 5.5 21 7.5 13.5 2 9 9 9" />
+              </svg>
+            </div>
+            <span class="pdp-reviews-count">(12 Verified Artisan Reviews)</span>
+          </div>
+
+          <!-- Price Container -->
+          <div class="pdp-price-box">
+            <span class="pdp-price-now">₹38,500</span>
+            <span class="pdp-price-old">₹44,000</span>
+            <span class="pdp-tax-tag">Inclusive of all taxes &amp; Express Shipping</span>
+          </div>
+
+          <!-- Quantity Picker & Action Buttons -->
+          <div class="pdp-action-box">
+            <div class="qty-picker">
+              <label>QUANTITY:</label>
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="updateQty(-1)">-</button>
+                <span class="qty-val" id="qtyDisplay">1</span>
+                <button class="qty-btn" onclick="updateQty(1)">+</button>
+              </div>
+            </div>
+
+            <div class="pdp-btn-group">
+              <button class="btn-add-cart">ADD TO CART</button>
+              <a href="checkout.html" class="btn-buy-now"
+                style="display: block; text-align: center; text-decoration: none;">BUY IT NOW</a>
+            </div>
+          </div>
+
+          <!-- Trust Badges Bar -->
+          <div class="pdp-trust-grid">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18">
+                  <rect x="1" y="3" width="15" height="13" rx="2" />
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </div>
+              <span>FREE SHIPPING</span>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <span>SILK MARK</span>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <span>SECURE PAY</span>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18">
+                  <polyline points="1 4 1 10 7 10" />
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                </svg>
+              </div>
+              <span>EASY RETURNS</span>
+            </div>
+          </div>
+
+          <!-- Description & Specs Tabs -->
+          <div class="pdp-tabs-container">
+            <div class="pdp-tab-buttons">
+              <button class="pdp-tab-btn active" onclick="switchTab('desc', this)">DESCRIPTION</button>
+              <button class="pdp-tab-btn" onclick="switchTab('specs', this)">SPECIFICATIONS</button>
+            </div>
+
+            <div class="pdp-tab-content">
+              <div id="tab-desc" class="pdp-tab-pane active">
+                <p>Add a touch of regal elegance to your ceremonial wardrobe with this handcrafted Kanchipuram silk
+                  saree. Woven using traditional Korvai handloom techniques, the deep lustrous body contrasts gracefully
+                  against an intricate gold zari pallu featuring classic temple motifs and Mayil (peacock) patterns.</p>
+              </div>
+              <div id="tab-specs" class="pdp-tab-pane">
+                <table class="specs-table">
+                  <tr>
+                    <td>Fabric Material</td>
+                    <td>100% Pure Mulberry Handloom Silk</td>
+                  </tr>
+                  <tr>
+                    <td>Zari Type</td>
+                    <td>24K Pure Gold Tested Zari</td>
+                  </tr>
+                  <tr>
+                    <td>Saree Length</td>
+                    <td>6.3 Meters (Includes Unstitched Blouse Piece)</td>
+                  </tr>
+                  <tr>
+                    <td>Weave Region</td>
+                    <td>Kanchipuram, Tamil Nadu, India</td>
+                  </tr>
+                  <tr>
+                    <td>Certification</td>
+                    <td>Government Authorized Silk Mark Certified</td>
+                  </tr>
+                  <tr>
+                    <td>Care Instructions</td>
+                    <td>Strictly Dry Clean Only</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ============ RELATED PRODUCTS SECTION ============ -->
+      <div style="margin-top: 100px;">
+        <div class="section-head text-center reveal">
+          <div class="thread"><span>You May Also Admire</span></div>
+          <h2>Related Heirloom Creations</h2>
+        </div>
+
+        <div class="product-grid reveal" style="margin-top: 40px;">
+          <!-- Related Card 1 -->
+          <div class="product-card">
+            <div class="product-media">
+              <img src="images/banarashi.png" alt="Banarasi Katan Silk Brocade">
+              <span class="badge">Gold Brocade</span>
+              <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+            </div>
+            <div class="product-info">
+              <h4>Banarasi Katan Silk Brocade</h4>
+              <div class="product-price"><span class="price-now">₹42,000</span></div>
+              <a href="product-details.html" class="add-cart" style="display: block; text-align: center;">View
+                Details</a>
+            </div>
+          </div>
+
+          <!-- Related Card 2 -->
+          <div class="product-card">
+            <div class="product-media">
+              <img src="images/Mysore.png" alt="Mysore Crepe Silk Zarwork">
+              <span class="badge">24K Gold Zarwork</span>
+              <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+            </div>
+            <div class="product-info">
+              <h4>Mysore Crepe Silk Zarwork</h4>
+              <div class="product-price"><span class="price-now">₹31,050</span></div>
+              <a href="product-details.html" class="add-cart" style="display: block; text-align: center;">View
+                Details</a>
+            </div>
+          </div>
+
+          <!-- Related Card 3 -->
+          <div class="product-card">
+            <div class="product-media">
+              <img src="images/soft silk.png" alt="Fluid Sheen Soft Silk">
+              <span class="badge">Fluid Sheen</span>
+              <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+            </div>
+            <div class="product-info">
+              <h4>Fluid Sheen Soft Silk Saree</h4>
+              <div class="product-price"><span class="price-now">₹24,800</span></div>
+              <a href="product-details.html" class="add-cart" style="display: block; text-align: center;">View
+                Details</a>
+            </div>
+          </div>
+
+          <!-- Related Card 4 -->
+          <div class="product-card">
+            <div class="product-media">
+              <img src="images/ikat.png" alt="Geometric Ikats & Patola">
+              <span class="badge">Patola Art</span>
+              <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.6">
+                  <path
+                    d="M12 20s-7-4.4-9.5-8.6C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.8 4 3 7.4C19 15.6 12 20 12 20Z" />
+                </svg></button>
+            </div>
+            <div class="product-info">
+              <h4>Geometric Ikats &amp; Patola</h4>
+              <div class="product-price"><span class="price-now">₹29,700</span></div>
+              <a href="product-details.html" class="add-cart" style="display: block; text-align: center;">View
+                Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html#home" class="footer-logo-link"><img src="images/logo_transparent.png" alt="MIRAYA — Timeless Elegance"
+              class="footer-logo"></a>
+          <p>A luxury boutique for handcrafted sarees, kids ethnic wear, and festive fashion — designed with heritage handloom artistry in Jaipur.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" />
+              </svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9 17c1-3 1.5-6 1.5-8a2 2 0 1 1 4 0c0 1.5-1 3-2 3.5" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <path d="M15 8h-2a2 2 0 0 0-2 2v10" />
+                <path d="M9 13h6" />
+                <circle cx="12" cy="12" r="9" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="sarees.html">Kanchipuram Sarees</a></li>
+            <li><a href="sarees.html">Banarasi Silk</a></li>
+            <li><a href="kids.html">Kids Ethnic Collection</a></li>
+            <li><a href="sarees.html">Festive Couture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Atelier</a></li>
+            <li><a href="about.html#artisans">Our Artisans</a></li>
+            <li><a href="contact.html">Careers &amp; Culture</a></li>
+            <li><a href="contact.html">Press &amp; Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="contact.html">Concierge &amp; Help</a></li>
+            <li><a href="wishlist.html">Wishlist Heirlooms</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="checkout.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Policies</h5>
+          <ul>
+            <li><a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="policy-link" data-policy="returns">Return &amp; Refund</a></li>
+            <li><a href="#" class="policy-link" data-policy="shipping">Shipping Policy</a></li>
+            <li><a href="#" class="policy-link" data-policy="cancellation">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MIRAYA Atelier. All rights reserved.</span>
+        <div class="footer-policy-bottom">
+          <a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a> • 
+          <a href="#" class="policy-link" data-policy="terms">Terms &amp; Conditions</a> • 
+          <a href="#" class="policy-link" data-policy="returns">Return Policy</a>
+        </div>
+        <span>Crafted with care in Jaipur, India.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Interactivity Scripts -->
+  <script>
+    function changeMainImage(src, thumbElem) {
+      document.getElementById('pdpMainImg').src = src;
+      document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
+      thumbElem.classList.add('active');
+    }
+
+    let qty = 1;
+    function updateQty(change) {
+      qty = Math.max(1, qty + change);
+      document.getElementById('qtyDisplay').textContent = qty;
+    }
+
+    function switchTab(tabId, btnElem) {
+      document.querySelectorAll('.pdp-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.pdp-tab-pane').forEach(p => p.classList.remove('active'));
+      btnElem.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    }
+  </script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
